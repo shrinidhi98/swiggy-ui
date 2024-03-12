@@ -1,25 +1,81 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Header from './Header';
+import Location from './Location';
+import axios from 'axios';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import LandingPage from './LandingPage';
+import Search from './Search';
+import Restaurant from './Restaurant';
+import SignIn from './SignIn';
+import { useAuth } from './context/AuthProvider';
+import loadingImg from './img/loading.gif';
+
 
 function App() {
+
+  const [isLocationClicked, setIsLocationClicked] = useState(false);
+  const [isSigninClicked, setIsSigninClicked] = useState(false);
+  const [location, setLocation] = useState("Tiruppur");
+  const [restaurants, setRestaurants] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const { isLoggedIn } = useAuth();
+
+  useEffect(() => {
+    console.log("location cliked")
+  }, [isLocationClicked]);
+
+  useEffect(() => {
+    console.log("sign in cliked")
+  }, [isSigninClicked]);
+
+  useEffect(() => {
+    axios.get("http://localhost:3500/restaurants")
+      .then((response) => {
+        setTimeout(() => {
+          setRestaurants(response.data);
+        setLoading(false);
+        }, 2000); // 5000 milliseconds = 5 seconds
+        
+      })
+      .catch((error) => {
+        console.error('Error fetching restaurants:', error);
+        setLoading(false);
+      });
+  }, [location]);
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Header isLocationClicked={isLocationClicked}
+          setIsLocationClicked={setIsLocationClicked}
+          isSigninClicked={isSigninClicked}
+          setIsSigninClicked={setIsSigninClicked}
+        />
+        {loading ? 
+            ( // Show loading symbol if loading is true
+              <div className="flex justify-center items-center mt-4 h-2/3 bg-black">
+                <img src={loadingImg} alt="Loading..." />
+              </div>
+            ) : (
+              <Routes>
+                <Route path="/" element={<LandingPage restaurants={restaurants} />} />
+                <Route path="/search" element={<Search restaurants={restaurants} />} />
+                <Route path='/restaurants/:id' element={<Restaurant restaurants={restaurants} />} />
+                {/* Add more routes as needed */}
+              </Routes>
+            )
+        }
+
+        {((isSigninClicked && !isLoggedIn) || isLocationClicked) && (
+          <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50"></div>
+        )}
+        {(isSigninClicked && !isLoggedIn) && <SignIn isSigninClicked={isSigninClicked} setIsSigninClicked={setIsSigninClicked} />}
+        {isLocationClicked && <Location isLocationClicked={isLocationClicked} setIsLocationClicked={setIsLocationClicked} />}
+      </div>
+    </BrowserRouter>
   );
 }
 

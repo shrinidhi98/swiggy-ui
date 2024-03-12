@@ -1,0 +1,160 @@
+{
+    "restaurants": [
+      {
+        "id": "1",
+        "name":"Restaurant 1",
+        "star":"4.2",
+        "time":"30-35 mins",
+        "cuisine":"Desserts, Juices, Chinese",
+        "location": "Tiruppur",
+        "src":"./img/restaurant.png"
+      },
+      {
+        "id": "2",
+        "name":"Restaurant 2",
+        "star":"4.2",
+        "time":"30-35 mins",
+        "cuisine":"Desserts, Juices, Chinese",
+        "location": "Tiruppur"
+      },
+      {
+        "id": "3",
+        "name":"Restaurant 3",
+        "star":"4.2",
+        "time":"30-35 mins",
+        "cuisine":"Desserts, Juices, Chinese",
+        "location": "Tiruppur"
+      },
+      {
+        "id": "4",
+        "name":"Restaurant 4",
+        "star":"4.2",
+        "time":"30-35 mins",
+        "cuisine":"Desserts, Juices, Chinese",
+        "location": "Tiruppur"
+      },
+      {
+        "id": "5",
+        "name":"Restaurant 5",
+        "star":"4.2",
+        "time":"30-35 mins",
+        "cuisine":"Desserts, Juices, Chinese",
+        "location": "Tiruppur"
+      },
+      {
+        "id": "6",
+        "name":"Restaurant 6",
+        "star":"4.2",
+        "time":"30-35 mins",
+        "cuisine":"Desserts, Juices, Chinese",
+        "location": "Tiruppur"
+      },
+      {
+        "id": "7",
+        "name":"Restaurant 7",
+        "star":"4.2",
+        "time":"30-35 mins",
+        "cuisine":"Desserts, Juices, Chinese",
+        "location": "Tiruppur"
+      },
+      {
+        "id": "8",
+        "name":"Restaurant 8",
+        "star":"4.2",
+        "time":"30-35 mins",
+        "cuisine":"Desserts, Juices, Chinese",
+        "location": "Tiruppur"
+      },
+      {
+        "id": "9",
+        "name":"Restaurant 9",
+        "star":"4.2",
+        "time":"30-35 mins",
+        "cuisine":"Desserts, Juices, Chinese",
+        "location": "Tiruppur"
+      },
+      {
+        "id": "10",
+        "name":"Restaurant 10",
+        "star":"4.2",
+        "time":"30-35 mins",
+        "cuisine":"Desserts, Juices, Chinese",
+        "location": "Tiruppur"
+      },
+      {
+        "id": "11",
+        "name":"Restaurant 11",
+        "star":"4.2",
+        "time":"30-35 mins",
+        "cuisine":"Desserts, Juices, Chinese",
+        "location": "Tiruppur"
+      },
+      {
+        "id": "12",
+        "name":"Restaurant 12",
+        "star":"4.2",
+        "time":"30-35 mins",
+        "cuisine":"Desserts, Juices, Chinese",
+        "location": "Tiruppur"
+      },
+      {
+        "id": "13",
+        "name":"Restaurant 13",
+        "star":"4.2",
+        "time":"30-35 mins",
+        "cuisine":"Desserts, Juices, Chinese",
+        "location": "Tiruppur"
+      },
+      {
+        "id": "14",
+        "name":"Restaurant 14",
+        "star":"4.2",
+        "time":"30-35 mins",
+        "cuisine":"Desserts, Juices, Chinese",
+        "location": "Tiruppur"
+      },
+      {
+        "id": "15",
+        "name":"Restaurant 15",
+        "star":"4.2",
+        "time":"30-35 mins",
+        "cuisine":"Desserts, Juices, Chinese",
+        "location": "Tiruppur"
+      }
+      
+    ],
+    "menus":[
+      {
+        "id":"1",
+        "name":"Idly",
+        "star":"4.2",
+        "description":"Serves 1",
+        "image":"url",
+        "veg":true
+      },
+      {
+        "id":"2",
+        "name":"Vada",
+        "star":"4.2",
+        "description":"Serves 1",
+        "image":"url",
+        "veg":true
+      },
+      {
+        "id":"3",
+        "name":"Dosa",
+        "star":"4.2",
+        "description":"Serves 1",
+        "image":"url",
+        "veg":false
+      },
+      {
+        "id":"4",
+        "name":"Masala Dosa",
+        "star":"4.2",
+        "description":"Serves 1",
+        "image":"url",
+        "veg":true
+      }
+    ]
+  }
