@@ -13,7 +13,6 @@ import loadingImg from './img/loading.gif';
 
 
 function App() {
-
   const [isLocationClicked, setIsLocationClicked] = useState(false);
   const [isSigninClicked, setIsSigninClicked] = useState(false);
   const [location, setLocation] = useState("Tiruppur");
@@ -34,17 +33,14 @@ function App() {
       .then((response) => {
         setTimeout(() => {
           setRestaurants(response.data);
-        setLoading(false);
-        }, 2000); // 5000 milliseconds = 5 seconds
-        
+          setLoading(false);
+        }, 2000);
       })
       .catch((error) => {
         console.error('Error fetching restaurants:', error);
         setLoading(false);
       });
   }, [location]);
-
-
 
   return (
     <BrowserRouter>
@@ -56,17 +52,16 @@ function App() {
         />
         {loading ? 
             ( // Show loading symbol if loading is true
-              <div className="flex justify-center items-center mt-4 h-2/3 bg-black">
-                <img src={loadingImg} alt="Loading..." />
-              </div>
-            ) : (
-              <Routes>
-                <Route path="/" element={<LandingPage restaurants={restaurants} />} />
-                <Route path="/search" element={<Search restaurants={restaurants} />} />
-                <Route path='/restaurants/:id' element={<Restaurant restaurants={restaurants} />} />
-                {/* Add more routes as needed */}
-              </Routes>
-            )
+          <div className="flex justify-center items-center mt-4 h-2/3 bg-black">
+            <img src={loadingImg} alt="Loading..." />
+          </div>
+        ) : (
+          <Routes>
+            <Route path="/" element={<LandingPage restaurants={restaurants} />} />
+            <Route path="/search" element={<Search restaurants={restaurants} />} />
+            <Route path='/restaurants/:id' element={<Restaurant restaurants={restaurants} />} />
+          </Routes>
+        )
         }
 
         {((isSigninClicked && !isLoggedIn) || isLocationClicked) && (
