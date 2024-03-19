@@ -7,7 +7,7 @@ const HomePage = ({restaurants}:{restaurants : any}) => {
     // const [search, setSearch] = useState('');
     
     return (
-        <div  className="w-4/6 mx-auto mt-6">
+        <div  className="w-5/6 md:w-4/6 mx-auto mt-6">
          <WhatsOnMind />  
          <hr className='mt-10'/> 
          <RestaurantChains />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Header from './Header';
 import Location from './Location';
@@ -9,7 +9,7 @@ import Search from './Search';
 import Restaurant from './Restaurant';
 import SignIn from './SignIn';
 import { useAuth } from './context/AuthProvider';
-import loadingImg from './img/loading.gif';
+import loadingImg from './img/loading_gif.gif';
 
 
 function App() {
@@ -50,18 +50,18 @@ function App() {
           isSigninClicked={isSigninClicked}
           setIsSigninClicked={setIsSigninClicked}
         />
-        {loading ? 
-            ( // Show loading symbol if loading is true
-          <div className="flex justify-center items-center mt-4 h-2/3 bg-black">
-            <img src={loadingImg} alt="Loading..." />
-          </div>
-        ) : (
-          <Routes>
-            <Route path="/" element={<LandingPage restaurants={restaurants} />} />
-            <Route path="/search" element={<Search restaurants={restaurants} />} />
-            <Route path='/restaurants/:id' element={<Restaurant restaurants={restaurants} />} />
-          </Routes>
-        )
+        {loading ?
+          ( // Show loading symbol if loading is true
+            <div className="flex justify-center items-center mt-4 h-2/3 bg-black">
+              <img src={loadingImg} alt="Loading..." />
+            </div>
+          ) : (
+            <Routes>
+              <Route path="/" element={<LandingPage restaurants={restaurants} />} />
+              <Route path="/search" element={<Search restaurants={restaurants} />} />
+              <Route path='/restaurants/:id' element={<Restaurant restaurants={restaurants} />} />
+            </Routes>
+          )
         }
 
         {((isSigninClicked && !isLoggedIn) || isLocationClicked) && (

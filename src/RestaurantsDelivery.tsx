@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import restaurantImg from './img/restaurant.png';
@@ -24,7 +24,7 @@ const RestaurantsDelivery = ({ restaurants }: { restaurants: any }) => {
         setTimeout(() => {
           const newEndIndex = endIndex + 5;
           setEndIndex(newEndIndex);
-        }, 2000); // 5000 milliseconds = 5 seconds
+        }, 2000);
       }
     });
   };
@@ -46,10 +46,10 @@ const RestaurantsDelivery = ({ restaurants }: { restaurants: any }) => {
   return (
     <div>
       <div>
-        <h2 className="justify-start font-bold text-2xl w-full mt-10">Restaurants with online food delivery in Tirupur</h2>
-        <div className='flex mt-5 mb-7'>
+        <h2 className="justify-start font-bold md:text-2xl w-full mt-10">Restaurants with online food delivery in Tirupur</h2>
+        <div className='flex flex-wrap mt-5 mb-7'>
           {filters.map((filter) => (
-            <button className="bg-white text-gray-800 py-0.5 p-px rounded-full border border-gray-400 mr-4 shadow-sm">
+            <button className="bg-white text-gray-800 py-0.5 px-2 rounded-full border border-gray-400 mr-4 mb-4 shadow-sm">
               <p className='ml-2 mr-2'>{filter}</p>
             </button>
           ))}

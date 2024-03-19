@@ -52,7 +52,7 @@ const SignIn = ({ isSigninClicked, setIsSigninClicked,}:
     return (
         <>
             {isOpen && (
-                <div className="fixed top-0 right-0 h-full w-2/5 bg-white z-50 flex justify-items-center flex-col">
+                <div className="fixed top-0 right-0 h-full md:w-2/5 bg-white z-50 flex justify-items-center flex-col">
                     <div className='ml-10 w-2/3'>
                         <div>
                             <button onClick={handleClose} className="top-5 left-10 text-gray-500"><IoCloseOutline className='h-10 w-10' /></button>

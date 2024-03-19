@@ -45,12 +45,12 @@ const WhatsOnMind = () => {
     };
     return (
         <div>
-            <div className="flex">
-                <h2 className="justify-start font-bold text-2xl w-full">What's on your mind?</h2>
-                <button className="hover:bg-gray-300 rounded-full" onClick={handleScrollLeft}><PiArrowCircleLeftLight size={40} /></button>
-                <button className="hover:bg-gray-300 rounded-full" onClick={handleScrollRight}><PiArrowCircleRightLight size={40} /></button>
+            <div className="flex py-12">
+                <h2 className="justify-start font-bold md:text-2xl w-full">What's on your mind?</h2>
+                <button className="hover:bg-gray-300 rounded-full" onClick={handleScrollLeft}><PiArrowCircleLeftLight size={30} /></button>
+                <button className="hover:bg-gray-300 rounded-full" onClick={handleScrollRight}><PiArrowCircleRightLight size={30} /></button>
             </div>
-            <div className="mt-10 flex overflow-x-auto " style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' }} ref={scrollRef}>
+            <div className="flex overflow-x-auto " style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' }} ref={scrollRef}>
                 {images.map((image, index) => (
                     <div key={index} className="flex-col items-center ml-7 inline-block">
                         <img src={image.src} alt={image.name} className="h-10 w-10 mb-2" />
@@ -58,7 +58,6 @@ const WhatsOnMind = () => {
                     </div>
                 ))}
             </div>
-            {/* <button className="absolute top-0 bottom-0 right-0 flex items-center px-2 bg-gray-200 hover:bg-gray-300"><FaChevronRight /></button> */}
         </div>
     )
 }

@@ -36,9 +36,9 @@ const RestaurantChains = () => {
     return (
         <div className="mt-10">
             <div className="flex">
-                <h2 className="justify-start font-bold text-2xl w-full">Top restaurant chains in Tirupur</h2>
-                <button className="hover:bg-gray-300 rounded-full" onClick={handleScrollLeft}><PiArrowCircleLeftLight size={40} /></button>
-                <button className="hover:bg-gray-300 rounded-full" onClick={handleScrollRight}><PiArrowCircleRightLight size={40} /></button>
+                <h2 className="justify-start font-bold md:text-2xl w-full">Top restaurant chains in Tirupur</h2>
+                <button className="hover:bg-gray-300 rounded-full" onClick={handleScrollLeft}><PiArrowCircleLeftLight size={30} /></button>
+                <button className="hover:bg-gray-300 rounded-full" onClick={handleScrollRight}><PiArrowCircleRightLight size={30} /></button>
             </div>
             <div className="flex overflow-x-auto mt-3" ref={scrollRef} 
                 style={{ scrollbarWidth: 'thin', WebkitOverflowScrolling: 'touch', scrollBehavior: 'smooth', scrollbarColor:"red"}}>
