@@ -4,13 +4,13 @@ import { PiCopyright } from "react-icons/pi";
 
 const Footer = () => {
     return (
-        <div className='flex flex-col justify-center items-center min-h-screen'>
-            <div className='bg-slate-300 py-20 px-4 text-center w-full'>
+        <div className='flex flex-col justify-center items-center'>
+            <div className='bg-slate-300 py-3 px-4 text-center w-full'>
                 <div className="min-h-full flex flex-col justify-center">
                     <h1 className='font-bold text-xl md:text-2xl mb-4'>For a better experience, download the Swiggy app now</h1>
                     <div className='flex justify-center space-x-4'>
                         <img src={googlePlay} alt="get it on google play" className="rounded-md" style={{ width: '150px', height: '75px' }} />
-                        <img src={googlePlay} alt="get it on google play" className="rounded-md" style={{ width: '150px', height: '75px' }} />
+                        {/* <img src={googlePlay} alt="get it on google play" className="rounded-md" style={{ width: '150px', height: '75px' }} /> */}
                     </div>
                 </div>
             </div>

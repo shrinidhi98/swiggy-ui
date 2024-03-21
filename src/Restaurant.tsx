@@ -129,10 +129,10 @@ const Restaurant = ({ restaurants }: { restaurants: Restaurant[] }) => {
                                 />
                                 <label
                                     htmlFor="toggleVeg"
-                                    className={`relative w-12 h-6 bg-gray-300 rounded-full cursor-pointer transition-all duration-300 ${isVegChecked ? 'bg-green-500' : ''}`}
+                                    className={`relative w-12 h-5 bg-gray-300 rounded-full cursor-pointer transition-all duration-300 ${isVegChecked ? 'bg-green-500' : ''}`}
                                 >
                                     <span
-                                        className={`absolute left-1 top-1 w-4 h-4 bg-white rounded-full shadow-md transition-all duration-300 ${isVegChecked ? 'transform translate-x-full' : ''}`}
+                                        className={`absolute top-0.5 w-4 h-4 bg-white rounded-full shadow-md transition-all duration-300 ${isVegChecked ? 'transform translate-x-full right-4' : ''}`}
                                     />
                                 </label>
                             </div>
@@ -147,10 +147,10 @@ const Restaurant = ({ restaurants }: { restaurants: Restaurant[] }) => {
                                 />
                                 <label
                                     htmlFor="toggleNonVeg"
-                                    className={`relative w-12 h-6 bg-gray-300 rounded-full cursor-pointer transition-all duration-300 ${isNonVegChecked ? 'bg-red-500' : ''}`}
+                                    className={`relative w-12 h-5 bg-gray-300 rounded-full cursor-pointer transition-all duration-300 ${isNonVegChecked ? 'bg-red-500' : ''}`}
                                 >
                                     <span
-                                        className={`absolute left-1 top-1 w-4 h-4 bg-white rounded-full shadow-md transition-all duration-300 ${isNonVegChecked ? 'transform translate-x-full' : ''}`}
+                                        className={`absolute top-0.5 w-4 h-4 bg-white rounded-full shadow-md transition-all duration-300 ${isNonVegChecked ? 'transform translate-x-full right-4' : ''}`}
                                     />
                                 </label>
                             </div>

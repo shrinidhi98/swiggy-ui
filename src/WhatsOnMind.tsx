@@ -45,7 +45,7 @@ const WhatsOnMind = () => {
     };
     return (
         <div>
-            <div className="flex py-12">
+            <div className="flex py-12 mt-20">
                 <h2 className="justify-start font-bold md:text-2xl w-full">What's on your mind?</h2>
                 <button className="hover:bg-gray-300 rounded-full" onClick={handleScrollLeft}><PiArrowCircleLeftLight size={30} /></button>
                 <button className="hover:bg-gray-300 rounded-full" onClick={handleScrollRight}><PiArrowCircleRightLight size={30} /></button>

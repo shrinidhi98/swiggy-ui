@@ -40,18 +40,18 @@ const RestaurantChains = () => {
                 <button className="hover:bg-gray-300 rounded-full" onClick={handleScrollLeft}><PiArrowCircleLeftLight size={30} /></button>
                 <button className="hover:bg-gray-300 rounded-full" onClick={handleScrollRight}><PiArrowCircleRightLight size={30} /></button>
             </div>
-            <div className="flex overflow-x-auto mt-3" ref={scrollRef} 
+            <div className="flex overflow-x-auto mt-3 gap-5" ref={scrollRef} 
                 style={{ scrollbarWidth: 'thin', WebkitOverflowScrolling: 'touch', scrollBehavior: 'smooth', scrollbarColor:"red"}}>
                 {restChain.map((image, index) => (
-                    <div key={index} className="flex flex-col transition transform hover:scale-90 motion-reduce:transition-none motion-reduce:hover:transform-none" style={{ minWidth: '250px' }}>
-                        <img src={image.src} alt={image.name} className="rounded-md" style={{ width: '200px', height: '200px' }} />
-                        <div className="font-bold text-sm text-slate-600 mt-5">{image.name}</div>
+                    <div key={index} className="flex flex-col transition transform hover:scale-90 motion-reduce:transition-none motion-reduce:hover:transform-none" style={{ minWidth: '200px' }}>
+                        <img src={image.src} alt={image.name} className="rounded-md" />
+                        <div className="font-bold text-xs md:text-sm text-slate-600 mt-5">{image.name}</div>
                         <div className="flex mt-1">
                             <FontAwesomeIcon icon={faStar} style={{ color: 'green' }} />
-                            <h6 className="ml-2 text-sm text-slate-600 font-bold">{image.star}{" . "}{image.time}</h6>
+                            <h6 className="ml-2 text-xs md:text-sm text-slate-600 font-bold">{image.star}{" . "}{image.time}</h6>
                         </div>
-                        <p className="text-sm text-slate-600 justify-start">{image.cuisine}</p>
-                        <p className="text-sm text-slate-600 justify-start">{image.location}</p>
+                        <p className="text-xs md:text-sm text-slate-600 justify-start">{image.cuisine}</p>
+                        <p className="text-xs md:text-sm text-slate-600 justify-start">{image.location}</p>
                         <div className='mt-5'></div>
                     </div>
                 ))}

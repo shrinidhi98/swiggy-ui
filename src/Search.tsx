@@ -19,7 +19,7 @@ const Search = ({ restaurants }: { restaurants : Restaurant[]}) => {
 
     const [search,setSearch] = useState('');
     return (
-        <div className='w-4/6 mx-auto mt-6'>
+        <div className='w-5/6 md:w-4/6 mx-auto py-12'>
             <div className="w-full mx-auto mt-6">
                 <div className="mt-5 mb-10">
                     <div className="flex items-center border border-gray-400 p-2">

@@ -71,17 +71,17 @@ const Navbar = ({ isLocationClicked, setIsLocationClicked, isSigninClicked, setI
                         }
                     </div>
                     <div className='hidden md:flex items-center'>
-                        <Link to='/search' className="mr-6 flex items-center">
-                            <FaSearch className="text-gray-600 mr-1" /> Search
+                        <Link to='/search' className="mr-6 flex items-center  hover:text-orange-500">
+                            <FaSearch className="text-gray-600 mr-1  hover:text-orange-500" /> Search
                         </Link>
-                        <div className="mr-6 flex items-center">
-                            <TbDiscount2 className="text-gray-600 mr-1" /> Offers
+                        <div className="mr-6 flex items-center hover:text-orange-500">
+                            <TbDiscount2 className="text-gray-600 mr-1  hover:text-orange-500 " /> Offers
                         </div>
-                        <div className="mr-6 flex items-center">
-                            <IoHelpBuoyOutline className="text-gray-600 mr-1" /> Help
+                        <div className="mr-6 flex items-center  hover:text-orange-500">
+                            <IoHelpBuoyOutline className="text-gray-600 mr-1  hover:text-orange-500" /> Help
                         </div>
-                        <div className='mr-6 flex items-center relative cursor-pointer'>
-                            <IoPersonOutline className="text-gray-600 mr-1" />
+                        <div className='mr-6 flex items-center relative cursor-pointer  hover:text-orange-500'>
+                            <IoPersonOutline className="text-gray-600 mr-1  hover:text-orange-500" />
                             {isLoggedIn ?
                                 <div onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
                                     <p>Hi</p>
@@ -100,8 +100,8 @@ const Navbar = ({ isLocationClicked, setIsLocationClicked, isSigninClicked, setI
                                 </div>
                             }
                         </div>
-                        <div className="flex items-center">
-                            <PiShoppingCartSimpleBold className="text-gray-600 mr-1" /> Cart
+                        <div className="flex items-center  hover:text-orange-500">
+                            <PiShoppingCartSimpleBold className="text-gray-600 mr-1  hover:text-orange-500" /> Cart
                         </div>
                     </div>
                 </div>

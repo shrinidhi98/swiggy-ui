@@ -25,7 +25,7 @@ const images = [
 const PopularCuisine = () => {
     return (
         <div className='mt-10'>
-            <h2 className="justify-start font-bold text-2xl w-full">What's on your mind?</h2>
+            <h2 className="justify-start font-bold md:text-2xl w-full">Popular Cuisines</h2>
             <div className="mt-10 flex overflow-x-auto" style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' }}>
                 {images.map((image, index) => (
                     <div key={index} className="flex-col items-center ml-7 inline-block">
