@@ -6,6 +6,7 @@ import { CgTimelapse } from "react-icons/cg";
 import { HiOutlineCurrencyRupee } from "react-icons/hi2";
 import Menu from './Menu';
 import { useParams } from "react-router-dom";
+import jsonData from './data/db.json';
 
 interface Restaurant {
     id: string;
@@ -19,9 +20,9 @@ interface Restaurant {
 }
 
 interface Menu {
-    id: number;
-    name: number;
-    star: number;
+    id: String;
+    name: string;
+    star: string;
     description: string;
     image: string;
     veg: boolean;
@@ -78,12 +79,13 @@ const Restaurant = ({ restaurants }: { restaurants: Restaurant[] }) => {
     },[isNonVegChecked])
 
     useEffect(() => {
-        axios.get("http://localhost:3500/menus").then(
-            (response) => {
-                setMenu(response.data);
-                setViewableMenu(response.data);
-            }
-        )
+        // axios.get("http://localhost:3500/menus").then(
+        //     (response) => {
+        //         setMenu(response.data);
+        //         setViewableMenu(response.data);
+        //     }
+        // )
+        setMenu(jsonData.menus);
     }, [restaurant])
     return (
         <div className='mt-10 w-4/6 mx-auto'>

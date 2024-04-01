@@ -10,13 +10,24 @@ import Restaurant from './Restaurant';
 import SignIn from './SignIn';
 import { useAuth } from './context/AuthProvider';
 import loadingImg from './img/loading_gif.gif';
+import jsonData from './data/db.json';
+
+interface RestaurantInterface {
+  id: string;
+  name: string;
+  star: string;
+  time: string;
+  cuisine: string;
+  location: string;
+  src: string;
+}
 
 
 function App() {
   const [isLocationClicked, setIsLocationClicked] = useState(false);
   const [isSigninClicked, setIsSigninClicked] = useState(false);
   const [location, setLocation] = useState("Tiruppur");
-  const [restaurants, setRestaurants] = useState([]);
+  const [restaurants, setRestaurants] = useState<RestaurantInterface[]>([]);
   const [loading, setLoading] = useState(true);
   const { isLoggedIn } = useAuth();
 
@@ -29,17 +40,18 @@ function App() {
   }, [isSigninClicked]);
 
   useEffect(() => {
-    axios.get("http://localhost:3500/restaurants")
-      .then((response) => {
-        setTimeout(() => {
-          setRestaurants(response.data);
-          setLoading(false);
-        }, 2000);
-      })
-      .catch((error) => {
-        console.error('Error fetching restaurants:', error);
-        setLoading(false);
-      });
+    // axios.get("http://localhost:3500/restaurants")
+    //   .then((response) => {
+    //     setTimeout(() => {
+    //       setRestaurants(response.data);
+    //       setLoading(false);
+    //     }, 2000);
+    //   })
+    //   .catch((error) => {
+    //     console.error('Error fetching restaurants:', error);
+    //     setLoading(false);
+    //   });
+    setRestaurants(jsonData.restaurants);
   }, [location]);
 
   return (
