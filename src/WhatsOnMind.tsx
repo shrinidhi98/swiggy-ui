@@ -50,10 +50,11 @@ const WhatsOnMind = () => {
                 <button className="hover:bg-gray-300 rounded-full" onClick={handleScrollLeft}><PiArrowCircleLeftLight size={30} /></button>
                 <button className="hover:bg-gray-300 rounded-full" onClick={handleScrollRight}><PiArrowCircleRightLight size={30} /></button>
             </div>
-            <div className="flex overflow-x-auto " style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' }} ref={scrollRef}>
+            <div className="flex overflow-x-auto mt-3 gap-5" style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' }} ref={scrollRef}>
                 {images.map((image, index) => (
-                    <div key={index} className="flex-col items-center ml-7 inline-block">
-                        <img src={image.src} alt={image.name} className="h-10 w-10 mb-2" />
+                    <div key={index} className="flex flex-col transition" style={{ minWidth: '100px' }}>
+                        <img src={image.src} alt={image.name} 
+                            className="h-24 w-52 mb-2 rounded-full" />
                         <div className="font-bold text-center text-sm text-slate-600">{image.name}</div>
                     </div>
                 ))}
