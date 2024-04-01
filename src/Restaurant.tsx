@@ -86,6 +86,7 @@ const Restaurant = ({ restaurants }: { restaurants: Restaurant[] }) => {
         //     }
         // )
         setMenu(jsonData.menus);
+        setViewableMenu(jsonData.menus);
     }, [restaurant])
     return (
         <div className='mt-10 w-4/6 mx-auto'>
