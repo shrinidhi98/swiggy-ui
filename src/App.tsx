@@ -51,7 +51,10 @@ function App() {
     //     console.error('Error fetching restaurants:', error);
     //     setLoading(false);
     //   });
-    setRestaurants(jsonData.restaurants);
+    setTimeout(() => {
+      setRestaurants(jsonData.restaurants);
+      setLoading(false);
+    }, 2000);
   }, [location]);
 
   return (
