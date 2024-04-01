@@ -29,7 +29,7 @@ function App() {
   }, [isSigninClicked]);
 
   useEffect(() => {
-    axios.get("https://swiggy-ui-pi.vercel.app//api/data")
+    axios.get("http://localhost:3500/restaurants")
       .then((response) => {
         setTimeout(() => {
           setRestaurants(response.data);
