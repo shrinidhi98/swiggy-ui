@@ -1,17 +1,13 @@
 import { useAuth } from "./context/AuthProvider";
 import {useState} from 'react';
 
-const MenuList = ({ menu }: { menu: any }) => {
+const MenuList = ({ menu,isItemAdded,setIstemAdded }: { menu: any,isItemAdded:boolean,setIstemAdded:any }) => {
 
-  const { isLoggedIn } = useAuth();
-  const [isItemAdded , setIstemAdded] = useState(false);
+  // const { isLoggedIn } = useAuth();
+  // const [isItemAdded , setIstemAdded] = useState(false);
 
   const handleAddItem = ()=> {
-      if(isLoggedIn) {
-
-      } else {
-        window.alert("Please login to add items into the cart....");
-      }
+        setIstemAdded(true);
   }
 
   return (

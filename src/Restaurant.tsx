@@ -7,6 +7,8 @@ import { HiOutlineCurrencyRupee } from "react-icons/hi2";
 import Menu from './Menu';
 import { useParams } from "react-router-dom";
 import jsonData from './data/db.json';
+import { useAuth } from "./context/AuthProvider";
+import Messagebox from './Messagebox';
 
 interface Restaurant {
     id: string;
@@ -36,7 +38,9 @@ const Restaurant = ({ restaurants }: { restaurants: Restaurant[] }) => {
     const [isVegChecked, setIsVegChecked] = useState(false);
     const [isNonVegChecked, setIsNonVegChecked] = useState(false);
     const [viewableMenu, setViewableMenu] = useState<Menu[]>([]);
+    const [isItemAdded, setIstemAdded] = useState(false);
 
+    const { isLoggedIn } = useAuth();
     const { id } = useParams();
     const restaurant = restaurants.find(restaurant => (restaurant.id).toString() === id);
 
@@ -48,35 +52,35 @@ const Restaurant = ({ restaurants }: { restaurants: Restaurant[] }) => {
         setIsNonVegChecked(!isNonVegChecked);
     };
 
-    useEffect(()=>{
-        if(isVegChecked) {
-            if(isNonVegChecked){
+    useEffect(() => {
+        if (isVegChecked) {
+            if (isNonVegChecked) {
                 setIsNonVegChecked(false);
             }
-            if(menu.length !== 0) {
+            if (menu.length !== 0) {
                 setViewableMenu(menu.filter((item) => item.veg === true))
             }
         }
-        else if(!isNonVegChecked && !isVegChecked){
+        else if (!isNonVegChecked && !isVegChecked) {
             setViewableMenu(menu);
         }
-        
-    },[isVegChecked])
 
-    useEffect(()=>{
-        if(isNonVegChecked) {
-            if(isVegChecked){
+    }, [isVegChecked])
+
+    useEffect(() => {
+        if (isNonVegChecked) {
+            if (isVegChecked) {
                 setIsVegChecked(false);
             }
-            if(menu.length !== 0) {
+            if (menu.length !== 0) {
                 setViewableMenu(menu.filter((item) => item.veg === false))
             }
         }
-        else if(!isNonVegChecked && !isVegChecked){
+        else if (!isNonVegChecked && !isVegChecked) {
             setViewableMenu(menu);
         }
-        
-    },[isNonVegChecked])
+
+    }, [isNonVegChecked])
 
     useEffect(() => {
         // axios.get("http://localhost:3500/menus").then(
@@ -140,7 +144,7 @@ const Restaurant = ({ restaurants }: { restaurants: Restaurant[] }) => {
                                 </label>
                             </div>
                             <div className="flex items-center">
-                            <p className='font-bold mr-2 ml-3'>Non Veg</p>
+                                <p className='font-bold mr-2 ml-3'>Non Veg</p>
                                 <input
                                     type="checkbox"
                                     id="toggleNonVeg"
@@ -160,8 +164,14 @@ const Restaurant = ({ restaurants }: { restaurants: Restaurant[] }) => {
                         </div>
                     </div>
                     <div id='itemList'>
-                        <Menu menu={viewableMenu}/>
+                        <Menu menu={viewableMenu} isLoggedIn={isLoggedIn} isItemAdded={isItemAdded} setIstemAdded={setIstemAdded} />
                     </div>
+                    {((!isLoggedIn && isItemAdded)) && (
+                        <div className="fixed top-0 left-0 w-full h-full z-50"></div>
+                    )}
+                    {((!isLoggedIn && isItemAdded)) && (
+                        <Messagebox message='Please login to add items' setIsItemAdded={setIstemAdded}/>                        
+                    )}
                 </div>
             }
         </div>
